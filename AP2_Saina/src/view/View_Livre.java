@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import controller.mainMVC;
 import model.model;
 import java.awt.List;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 public class View_Livre {
 
 	private JFrame frame;
@@ -56,13 +59,17 @@ public class View_Livre {
 		lblListeDeLivre.setBounds(84, 49, 122, 15);
 		frame.getContentPane().add(lblListeDeLivre);
 		
-		JList list = new JList();
-		list.setBounds(80, 76, 190, 79);
-		frame.getContentPane().add(list);
-		
 		List list_box = new List();
-		list_box.setBounds(81, 168, 139, 72);
+		list_box.setBounds(77, 83, 139, 72);
 		frame.getContentPane().add(list_box);
+		
+		JButton btnRetour = new JButton("Retour");
+		btnRetour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { View_Accueil retour = new View_Accueil();
+			}
+		});
+		btnRetour.setBounds(35, 222, 117, 25);
+		frame.getContentPane().add(btnRetour);
 		
 		System.out.println(mainMVC.getM().getListLivre().size());
 		for (int i=0;i!=mainMVC.getM().getListLivre().size();i++)
