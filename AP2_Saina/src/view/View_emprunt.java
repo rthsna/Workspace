@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class View_emprunt {
 
@@ -62,7 +63,7 @@ public class View_emprunt {
 		
 		btnRetour = new JButton("Retour");
 		btnRetour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {View_Accueil retour = new View_Accueil();
+			public void actionPerformed(ActionEvent e) { frame.setVisible(false);
 			}
 		});
 		btnRetour.setBounds(37, 236, 117, 25);
@@ -80,6 +81,10 @@ public class View_emprunt {
 		btnEmprunter = new JButton("Emprunter");
 		btnEmprunter.setBounds(174, 137, 117, 25);
 		frame.getContentPane().add(btnEmprunter);
+		
+		JLabel lblEmprunt = new JLabel("EMPRUNT");
+		lblEmprunt.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblEmprunt.setBounds(168, 12, 105, 15);
+		frame.getContentPane().add(lblEmprunt);
 	}
-
 }

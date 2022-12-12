@@ -65,12 +65,18 @@ public class View_Livre {
 		
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { View_Accueil retour = new View_Accueil();
+			public void actionPerformed(ActionEvent e) 
+			{ 
+				//frame.dispose();
+	         frame.setVisible(false);
+	   
+			
 			}
+
+	
 		});
 		btnRetour.setBounds(35, 222, 117, 25);
 		frame.getContentPane().add(btnRetour);
-		
 		System.out.println(mainMVC.getM().getListLivre().size());
 		for (int i=0;i!=mainMVC.getM().getListLivre().size();i++)
 		{

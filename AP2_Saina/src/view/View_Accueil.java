@@ -85,7 +85,8 @@ public class View_Accueil {
 		
 		JButton btnNewButton_2 = new JButton("Creation adherent");
 		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {View_creationadh cah = new View_creationadh();
+			public void actionPerformed(ActionEvent e) {
+				View_creationadh cah = new View_creationadh();
 			}
 		});
 		btnNewButton_2.setFont(new Font("Montserrat Medium", Font.BOLD, 12));
@@ -128,5 +129,10 @@ public class View_Accueil {
 		btnRestituerUnLivre.setFont(new Font("Montserrat Medium", Font.BOLD, 12));
 		btnRestituerUnLivre.setBounds(238, 215, 175, 25);
 		frame.getContentPane().add(btnRestituerUnLivre);
+	}
+
+	public static void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -69,8 +69,9 @@ public class View_restitution {
 		frame.getContentPane().add(btnRestituer);
 		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setFont(new Font("Khmer OS Content", Font.BOLD, 12));
 		btnRetour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {View_Accueil retour = new View_Accueil();
+			public void actionPerformed(ActionEvent e) { frame.setVisible(false);
 			}
 		});
 		btnRetour.setBounds(25, 224, 117, 25);

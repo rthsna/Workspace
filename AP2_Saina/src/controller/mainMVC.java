@@ -21,6 +21,7 @@ public class mainMVC {
 		System.out.println("main MVC");
 		m =new model();
 		m.getAll();
+
 		/*
 		System.out.println(m.getListLivre().size());
 		for (int i=0;i<m.getListLivre().size();i++)
@@ -30,6 +31,7 @@ public class mainMVC {
 		*/
 		View_Accueil window = new View_Accueil();
 	}
+
 
 	
 }

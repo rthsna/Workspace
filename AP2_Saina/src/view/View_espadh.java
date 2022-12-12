@@ -105,7 +105,7 @@ public class View_espadh {
 		
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {View_Accueil retour = new View_Accueil();
+			public void actionPerformed(ActionEvent e) { frame.setVisible(false);
 			}
 		});
 		btnRetour.setBounds(15, 225, 117, 25);
