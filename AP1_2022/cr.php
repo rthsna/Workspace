@@ -15,7 +15,7 @@ if (isset($_POST['update'])) //recupere données de ccr.php
         $contenu= addslashes($_POST['contenu']);
         $ide=$_SESSION["id"];
         $connexion = mysqli_connect($serveurBDD,$userBDD,$mdpBDD,$nomBDD);
-        $requete="INSERT INTO CR (date,datetime,description,note,num_utilisateur) VALUES ('$date',NOW(),'$contenu',$note,$ide);";
+        $requete="INSERT INTO CR (date,datetime,description,Note,num_utilisateur) VALUES ('$date',NOW(),'$contenu',$note,$ide);";
         echo $_SESSION["id"]; //crée nouveau compte rendu avec infos recuperees
         echo "<br>$requete<hr>";
         if(!mysqli_query($connexion,$requete)) 
@@ -69,7 +69,7 @@ if($connexion = mysqli_connect($serveurBDD,$userBDD,$mdpBDD,$nomBDD))
             $contenu=$donnees['description'];
             $nom = $donnees ['nom'];
             $date = $donnees ['date'];
-            $note=$donnees['note'];
+            $note=$donnees['Note'];
             
             echo "<table border=2><thead> <tr> <th colspan=2> <u><center>Compte rendu n°$num de $nom</center></u> </th> </tr> </thead>
             <tbody> <tr> <td>  $contenu</td> </tr> <tr><td><center>Note données par l'éleve : $note</tr></td></center><tr> <td><center>$date</center> </td> </tr> </tbody> </table> <br>";  //affiche tous les compte rendus du plus recent au plus ancien + lien pour modifier
@@ -98,9 +98,11 @@ else //si connexion en eleve
             $num=$donnees['num'];
             $contenu=$donnees['description'];
             $note=$donnees['Note'];
+            $date=$donnees['date'];
             
-            echo "<table border=2><thead> <tr> <th colspan=2> <u>n°$num</u> </th> </tr> </thead>
-            <tbody> <tr> <td>  $contenu</td><td> note : $note</td> </tr> <tr> <td> <a href='modif.php?id=$num'>Modifier</a> </td> </tr> </tbody> </table> <br>";  //affiche tous les compte rendus du plus recent au plus ancien + lien pour modifier
+            echo "<table border=2><thead> <tr> <th colspan=2> <u>n°$num</u> : le $date </th> </tr> </thead>
+            <tbody> <tr> <td>  $contenu</td><td> note : $note</td> </tr> <tr> <td> 
+<a href='modif.php?id=$num'>Modifier</a> </td> </tr> </tbody> </table> <br>";  //affiche tous les compte rendus du plus recent au plus ancien + lien pour modifier
           }
     }
 

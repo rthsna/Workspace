@@ -52,6 +52,7 @@ else
           <div style='background-color : #brown; '>prenom = $prenom<br></div> 
           <div style='background-color : #aaa; '>email = $email<br></div>
           <div style='background-color : brown; '>tel = $tel<br></div>
+          <div style='background-color : #aaa; '>option = $option<br></div>
           </font>";
 
 }

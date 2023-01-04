@@ -3,6 +3,7 @@ session_start();
 ?>
 <html>
 <head> <link href="style.css" media="all" rel="stylesheet" type="text/css"/> </head>
+<title> Creation Compte rendu</title>
 
 <ul class="nav">
   <li><a href="accueil.php">Accueil</a></li>

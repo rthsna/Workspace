@@ -10,6 +10,7 @@ session_start();
   <li><a href="cr.php">Compte rendus</a></li>
   <li><a href="ccr.php">Nouveau compte-rendu</a></li>
 
+ </ul> 
 
 <?php
 include '_conf.php';
@@ -30,15 +31,27 @@ include '_conf.php';
 
 <FORM method="post" action="cr.php"> 
 
+<div> <font size=20 align="center">Modifier le compte rendu </font> </div> 
 <br> 
-<div> Date <input type="date" name="date" required> </div>
+<div> Date <input $date name="date" required> </div>
 <div> Contenu <textarea name="contenu" rows=10 cols=40></textarea>
-<?php
-    echo $contenu;
-?>
 </textarea>
+<br><br>
+<?php    
+echo  $contenu;
+?>
+<br><br>
+Note : <select name="note">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+  </select>
+<br><br>
 <br>
-<div> <button type="submit" name="update"> Confirmer </button>
+<div> <button type="submit" name="update"> Modifier </button>
 
 
 </html>
