@@ -33,8 +33,8 @@ include '_conf.php';
 
 <div> <font size=20 align="center">Modifier le compte rendu </font> </div> 
 <br> 
-<div> Date <input $date name="date" required> </div>
-<div> Contenu <textarea name="contenu" rows=10 cols=40></textarea>
+<div> Date:   </div> $date=$donnees['date']
+<div> Contenu: <br><textarea name="contenu" rows=10 cols=40></textarea>
 </textarea>
 <br><br>
 <?php    

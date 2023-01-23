@@ -47,16 +47,23 @@ else
                  $option="sisr";
                  }
              }
-          echo "<font size=6 align='center' >
+         
+
+   }
+
+    echo "<font size=6 align='center' >
           <div style='background-color : #74992e; '>nom = $nom<br></div> 
           <div style='background-color : #brown; '>prenom = $prenom<br></div> 
           <div style='background-color : #aaa; '>email = $email<br></div>
           <div style='background-color : brown; '>tel = $tel<br></div>
           <div style='background-color : #aaa; '>option = $option<br></div>
-          </font>";
+          </font>";  
 
-}
 ?>
+   <a href='modifp.php'> Modifier Informations  </a>
+   
+
+
 
 
 
