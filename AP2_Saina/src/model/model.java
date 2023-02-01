@@ -177,7 +177,7 @@ public class model {
 		ListLivre=new ArrayList<LIVRE> ();
 		ListAuteur=new ArrayList<AUTEUR> ();
 		ListAdherent=new ArrayList<ADHERENT> ();
-		String BDD = "AP_2";
+		String BDD = "ap2_2022";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
 		String user = "root";
 		String passwd = "";

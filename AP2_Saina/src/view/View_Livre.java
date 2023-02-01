@@ -16,6 +16,10 @@ import java.awt.List;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 public class View_Livre {
 
 	private JFrame frame;
@@ -56,14 +60,23 @@ public class View_Livre {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblListeDeLivre = new JLabel("Liste de Livre :");
-		lblListeDeLivre.setBounds(84, 49, 122, 15);
+		lblListeDeLivre.setBackground(new Color(0, 255, 255));
+		lblListeDeLivre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblListeDeLivre.setForeground(new Color(255, 51, 51));
+		lblListeDeLivre.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
+		lblListeDeLivre.setBounds(80, 71, 122, 15);
 		frame.getContentPane().add(lblListeDeLivre);
 		
 		List list_box = new List();
-		list_box.setBounds(77, 83, 139, 72);
+		list_box.setBackground(new Color(255, 255, 204));
+		list_box.setForeground(new Color(255, 102, 102));
+		list_box.setBounds(68, 93, 339, 87);
 		frame.getContentPane().add(list_box);
 		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setBackground(new Color(102, 51, 51));
+		btnRetour.setForeground(new Color(0, 0, 0));
+		btnRetour.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 11));
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{ 
@@ -77,6 +90,11 @@ public class View_Livre {
 		});
 		btnRetour.setBounds(35, 222, 117, 25);
 		frame.getContentPane().add(btnRetour);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sayn\\Pictures\\img-blv-620x400.jpg"));
+		lblNewLabel.setBounds(0, 0, 454, 262);
+		frame.getContentPane().add(lblNewLabel);
 		System.out.println(mainMVC.getM().getListLivre().size());
 		for (int i=0;i!=mainMVC.getM().getListLivre().size();i++)
 		{
