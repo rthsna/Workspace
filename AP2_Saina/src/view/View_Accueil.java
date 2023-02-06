@@ -55,19 +55,19 @@ public class View_Accueil {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 454, 300);
+		frame.setBounds(100, 100, 489, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAccueil = new JLabel("ACCUEIL");
-		lblAccueil.setForeground(new Color(153, 255, 255));
-		lblAccueil.setFont(new Font("Source Serif Pro Black", lblAccueil.getFont().getStyle() | Font.BOLD | Font.ITALIC, 21));
+		lblAccueil.setForeground(new Color(135, 206, 235));
+		lblAccueil.setFont(new Font("Tahoma", lblAccueil.getFont().getStyle() | Font.BOLD | Font.ITALIC, 21));
 		lblAccueil.setBounds(171, 11, 145, 39);
 		frame.getContentPane().add(lblAccueil);
 		
 		JButton btnNewButton = new JButton("Liste des Livres");
 		btnNewButton.setBackground(SystemColor.textHighlight);
-		btnNewButton.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 11));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnNewButton.setBounds(12, 50, 145, 25);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,8 +84,8 @@ public class View_Accueil {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Emprunter un Livre");
-		btnNewButton_1.setBackground(Color.RED);
-		btnNewButton_1.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 12));
+		btnNewButton_1.setBackground(SystemColor.activeCaption);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnNewButton_1.setBounds(12, 161, 179, 25);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -96,20 +96,20 @@ public class View_Accueil {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Creation adherent");
-		btnNewButton_2.setBackground(Color.ORANGE);
+		btnNewButton_2.setBackground(new Color(255, 99, 71));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				View_creationadh cah = new View_creationadh();
 			}
 		});
-		btnNewButton_2.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 12));
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnNewButton_2.setBounds(234, 161, 165, 25);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnEspaceAdhrent = new JButton("Espace Adhérent");
-		btnEspaceAdhrent.setBackground(Color.RED);
+		btnEspaceAdhrent.setBackground(SystemColor.activeCaption);
 		btnEspaceAdhrent.setIcon(null);
-		btnEspaceAdhrent.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 12));
+		btnEspaceAdhrent.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnEspaceAdhrent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {View_espadh vi = new View_espadh();
 			}
@@ -118,8 +118,8 @@ public class View_Accueil {
 		frame.getContentPane().add(btnEspaceAdhrent);
 		
 		JButton btnNewButton_3 = new JButton("Création Livre");
-		btnNewButton_3.setBackground(Color.ORANGE);
-		btnNewButton_3.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 12));
+		btnNewButton_3.setBackground(new Color(255, 99, 71));
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {View_creationlivre cl = new View_creationlivre();
 			}
@@ -129,30 +129,30 @@ public class View_Accueil {
 		
 		JLabel lblAdhrent = new JLabel("Adhérent");
 		lblAdhrent.setBackground(SystemColor.textHighlight);
-		lblAdhrent.setForeground(Color.RED);
+		lblAdhrent.setForeground(new Color(65, 105, 225));
 		lblAdhrent.setFont(new Font("DejaVu Sans Condensed", lblAdhrent.getFont().getStyle() | Font.BOLD | Font.ITALIC, 15));
 		lblAdhrent.setBounds(31, 107, 100, 15);
 		frame.getContentPane().add(lblAdhrent);
 		
 		JButton btnRestituerUnLivre = new JButton("Restituer Un Livre");
-		btnRestituerUnLivre.setBackground(Color.ORANGE);
+		btnRestituerUnLivre.setBackground(new Color(255, 99, 71));
 		btnRestituerUnLivre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {View_restitution res = new View_restitution();
 			}
 		});
-		btnRestituerUnLivre.setFont(new Font("Source Serif Pro Semibold", Font.BOLD | Font.ITALIC, 12));
+		btnRestituerUnLivre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnRestituerUnLivre.setBounds(234, 187, 165, 25);
 		frame.getContentPane().add(btnRestituerUnLivre);
 		
-		JLabel lblBibliothcaire = new JLabel("Bibliothcaire");
-		lblBibliothcaire.setForeground(Color.ORANGE);
+		JLabel lblBibliothcaire = new JLabel("Bibliothécaire");
+		lblBibliothcaire.setForeground(new Color(255, 69, 0));
 		lblBibliothcaire.setBounds(268, 104, 107, 20);
 		frame.getContentPane().add(lblBibliothcaire);
 		lblBibliothcaire.setFont(new Font("DejaVu Sans Condensed", Font.BOLD | Font.ITALIC, 15));
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sayn\\Pictures\\IlpLRYK (2).jpg"));
-		lblNewLabel.setBounds(-16, -1, 454, 262);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sayn\\Downloads\\e539a5ed-26c9-4c0b-8130-35a5c57f14b1.jpeg"));
+		lblNewLabel.setBounds(-117, -159, 987, 577);
 		frame.getContentPane().add(lblNewLabel);
 	}
 

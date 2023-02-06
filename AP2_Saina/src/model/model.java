@@ -198,8 +198,26 @@ public class model {
 			e.printStackTrace();
 		}
 	}
+	public void emprunter_livre(String ad, String l) throws SQLException
+	{		
 
+		String requete;
+		Statement stmt = con.createStatement();
 
+		requete = "UPDATE livre set adherent="+ad+" WHERE ISBN="+l+";";
+		stmt.executeUpdate(requete);
+
+	}
+	public void restituer_livre( String l) throws SQLException
+	{		
+
+		String requete;
+		Statement stmt = con.createStatement();
+
+		requete = "UPDATE livre set adherent="+null+" WHERE ISBN="+l+";";
+		stmt.executeUpdate(requete);
+
+	}
 
 }
 
