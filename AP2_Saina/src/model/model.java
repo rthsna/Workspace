@@ -14,7 +14,6 @@ public class model {
 	private ArrayList<LIVRE> ListLivre;
 	private ArrayList<AUTEUR> ListAuteur;
 	private ArrayList<ADHERENT> ListAdherent;
-
 	public ArrayList<LIVRE> getListLivre() {
 		return ListLivre;
 	}
@@ -22,7 +21,7 @@ public class model {
 	public void getAll() throws SQLException {
 		ListAdherent.clear();
 		ListAuteur.clear();
-		ListLivre.clear();
+		ListLivre.clear();	
 		ListLivre=new ArrayList<LIVRE> ();
 		ListAuteur=new ArrayList<AUTEUR> ();
 		ListAdherent=new ArrayList<ADHERENT> ();
