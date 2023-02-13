@@ -106,6 +106,10 @@ public class View_creationadh {
 		frame.getContentPane().add(lblEmail);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnValider.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnValider.setBackground(new Color(135, 206, 250));
 		btnValider.setBounds(127, 203, 117, 25);

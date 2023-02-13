@@ -59,6 +59,18 @@ public class View_Accueil {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton btnNewButton_4 = new JButton("Liste Des Adherent");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				View_ListeAdherent vl = new View_ListeAdherent();
+			}
+			}
+		);
+		btnNewButton_4.setBackground(SystemColor.activeCaption);
+		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnNewButton_4.setBounds(12, 188, 179, 23);
+		frame.getContentPane().add(btnNewButton_4);
+		
 		JLabel lblAccueil = new JLabel("ACCUEIL");
 		lblAccueil.setForeground(new Color(135, 206, 235));
 		lblAccueil.setFont(new Font("Tahoma", lblAccueil.getFont().getStyle() | Font.BOLD | Font.ITALIC, 21));

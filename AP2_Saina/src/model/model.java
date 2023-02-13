@@ -14,10 +14,14 @@ public class model {
 	private ArrayList<LIVRE> ListLivre;
 	private ArrayList<AUTEUR> ListAuteur;
 	private ArrayList<ADHERENT> ListAdherent;
-	public ArrayList<LIVRE> getListLivre() {
+	public ArrayList<LIVRE> getListLivre()
+	{
 		return ListLivre;
 	}
-
+	public ArrayList<ADHERENT> getListAdherent()
+	{
+		return ListAdherent;
+	}
 	public void getAll() throws SQLException {
 		ListAdherent.clear();
 		ListAuteur.clear();
@@ -126,7 +130,7 @@ public class model {
 	{
 		for(int i=0;i<ListAuteur.size();i++)
 		{
-			if(ListLivre.get(i).getISBN().equals(num))
+			if(ListAuteur.get(i).getNum().equals(num))
 			{
 				return ListAuteur.get(i);
 			}
@@ -217,6 +221,19 @@ public class model {
 		stmt.executeUpdate(requete);
 
 	}
+	public void creation_livre( String ISBN,String titre , Float prix, int Auteur   ) throws SQLException
+	{		
+
+		String requete;
+		Statement stmt = con.createStatement();
+
+		requete = "INSERT INTO `livre` (`ISBN`, `titre`, `prix`, `adherent`, `auteur`) VALUES ('"+ISBN+"', '"+titre+"', "+prix+", null, "+Auteur+");";
+		System.out.println(requete);
+		stmt.executeUpdate(requete);
+
+	}
+
+	
 
 }
 

@@ -69,7 +69,11 @@ public class ADHERENT {
 	public void setNum(String num) {
 		this.num = num;
 	}
-	
+	public String LigneAdherent()  {
+		String A;
+		A= nom+"-"+prenom+"-"+email+"-"+ListLivre.size();
+		return A;
+	}
 
 	
 

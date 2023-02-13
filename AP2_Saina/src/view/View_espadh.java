@@ -71,7 +71,7 @@ public class View_espadh {
 		listnom.setBounds(79, 111, 139, 19);
 		frame.getContentPane().add(listnom);
 		
-		JLabel lbl_info = new JLabel("\"\"");
+		JLabel lbl_info = new JLabel("");
 		lbl_info.setBounds(24, 198, 158, 14);
 		frame.getContentPane().add(lbl_info);
 		
@@ -122,7 +122,7 @@ public class View_espadh {
 		frame.getContentPane().add(lblEmprunt);
 		
 		List listlivre = new List();
-		listlivre.setBounds(266, 110, 139, 72);
+		listlivre.setBounds(248, 111, 176, 86);
 		frame.getContentPane().add(listlivre);
 		
 		JButton btnRetour = new JButton("Retour");
@@ -165,7 +165,10 @@ public class View_espadh {
 					
 					//dans la boucle
 					//list.add(
-					listlivre.add(ad.getListLivre());
+					for (int i=0;i!=ad.getListLivre().size();i++)
+					{
+						listlivre.add(ad.getListLivre().get(i).Ligne());	
+					}
 				}
 					
 				

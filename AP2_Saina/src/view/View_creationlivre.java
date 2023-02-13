@@ -7,6 +7,10 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JEditorPane;
 import javax.swing.JTextField;
+
+import controller.mainMVC;
+import model.LIVRE;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,10 +21,10 @@ public class View_creationlivre {
 
 	private JFrame frame;
 	private final JLabel lblCrationLivre = new JLabel("CRÉATION LIVRE");
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField textField_Isbn;
+	private JTextField textField_Titre;
+	private JTextField textField_Prix;
+	private JTextField textField_Auteur;
 
 	/**
 	 * Launch the application.
@@ -65,21 +69,20 @@ public class View_creationlivre {
 		lblIsbn.setBounds(40, 69, 70, 15);
 		frame.getContentPane().add(lblIsbn);
 		
-		textField = new JTextField();
-		textField.setBounds(98, 67, 114, 19);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
+		textField_Isbn = new JTextField();
+		textField_Isbn.setBounds(98, 67, 114, 19);
+		frame.getContentPane().add(textField_Isbn);
+		textField_Isbn.setColumns(10);
 		JLabel lblNom = new JLabel("Titre :");
 		lblNom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		lblNom.setForeground(new Color(224, 255, 255));
 		lblNom.setBounds(40, 96, 70, 15);
 		frame.getContentPane().add(lblNom);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(98, 96, 114, 19);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		textField_Titre = new JTextField();
+		textField_Titre.setBounds(98, 96, 114, 19);
+		frame.getContentPane().add(textField_Titre);
+		textField_Titre.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Prix :");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -87,10 +90,11 @@ public class View_creationlivre {
 		lblNewLabel.setBounds(40, 123, 70, 15);
 		frame.getContentPane().add(lblNewLabel);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(98, 123, 114, 19);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		textField_Prix = new JTextField();
+		textField_Prix.setBounds(98, 123, 114, 19);
+		frame.getContentPane().add(textField_Prix);
+		textField_Prix.setColumns(10);
+		
 		
 		JLabel lblAuteur = new JLabel("Auteur :");
 		lblAuteur.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -98,12 +102,17 @@ public class View_creationlivre {
 		lblAuteur.setBounds(28, 150, 70, 15);
 		frame.getContentPane().add(lblAuteur);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(98, 148, 114, 19);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
-		
+		textField_Auteur = new JTextField();
+		textField_Auteur.setBounds(98, 148, 114, 19);
+		frame.getContentPane().add(textField_Auteur);
+		textField_Auteur.setColumns(10);
 		JButton btnValider = new JButton("Valider");
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					
+				mainMVC.getM().Creation_livre(textField_Isbn.getText(),textField_Titre.getText(), Float.parseFloat(textField_Prix.getText()),Integer.parseInt(textField_Auteur.getText()));
+			}
+		});
 		btnValider.setBackground(new Color(176, 224, 230));
 		btnValider.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnValider.setBounds(98, 177, 117, 25);
