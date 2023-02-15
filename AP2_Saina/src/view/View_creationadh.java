@@ -7,18 +7,23 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
+
+import controller.mainMVC;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Label;
 
 public class View_creationadh {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField textFieldnum;
+	private JTextField textFieldnom;
+	private JTextField textFieldprenom;
+	private JTextField textFieldemail;
 
 	/**
 	 * Launch the application.
@@ -54,17 +59,21 @@ public class View_creationadh {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblCrationAdhrent = new JLabel("CRÉATION ADHÉRENT");
-		lblCrationAdhrent.setForeground(new Color(255, 69, 0));
-		lblCrationAdhrent.setBackground(new Color(52, 101, 164));
-		lblCrationAdhrent.setFont(new Font("DialogInput", Font.BOLD, 18));
-		lblCrationAdhrent.setBounds(63, 11, 227, 15);
-		frame.getContentPane().add(lblCrationAdhrent);
+		JLabel lblCreationAdherent = new JLabel("");
+		lblCreationAdherent.setBounds(137, 230, 137, 14);
+		frame.getContentPane().add(lblCreationAdherent);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(130, 74, 114, 19);
-		frame.getContentPane().add(textField);
+		JLabel lblCreationAdhrent = new JLabel("CRÉATION ADHÉRENT");
+		lblCreationAdhrent.setForeground(new Color(255, 69, 0));
+		lblCreationAdhrent.setBackground(new Color(52, 101, 164));
+		lblCreationAdhrent.setFont(new Font("DialogInput", Font.BOLD, 18));
+		lblCreationAdhrent.setBounds(63, 11, 227, 15);
+		frame.getContentPane().add(lblCreationAdhrent);
+		
+		textFieldnum = new JTextField();
+		textFieldnum.setColumns(10);
+		textFieldnum.setBounds(130, 74, 114, 19);
+		frame.getContentPane().add(textFieldnum);
 		
 		JLabel lblNum = new JLabel("Num : ");
 		lblNum.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -72,20 +81,20 @@ public class View_creationadh {
 		lblNum.setBounds(84, 77, 36, 15);
 		frame.getContentPane().add(lblNum);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(130, 104, 114, 19);
-		frame.getContentPane().add(textField_1);
+		textFieldnom = new JTextField();
+		textFieldnom.setColumns(10);
+		textFieldnom.setBounds(130, 104, 114, 19);
+		frame.getContentPane().add(textFieldnom);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(130, 134, 114, 19);
-		frame.getContentPane().add(textField_2);
+		textFieldprenom = new JTextField();
+		textFieldprenom.setColumns(10);
+		textFieldprenom.setBounds(130, 134, 114, 19);
+		frame.getContentPane().add(textFieldprenom);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(130, 164, 114, 19);
-		frame.getContentPane().add(textField_3);
+		textFieldemail = new JTextField();
+		textFieldemail.setColumns(10);
+		textFieldemail.setBounds(130, 164, 114, 19);
+		frame.getContentPane().add(textFieldemail);
 		
 		JLabel lblNom = new JLabel("Nom : ");
 		lblNom.setForeground(new Color(255, 215, 0));
@@ -108,11 +117,19 @@ public class View_creationadh {
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					mainMVC.getM().creation_adherent(textFieldnum.getText(),textFieldnom.getText(),textFieldprenom.getText(),textFieldemail.getText());
+					lblCreationAdherent.setText("L'adherent a été crée!");
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					lblCreationAdherent.setText("ERREUR D'INFORMATION!");
+				}
 			}
 		});
 		btnValider.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnValider.setBackground(new Color(135, 206, 250));
-		btnValider.setBounds(127, 203, 117, 25);
+		btnValider.setBounds(127, 194, 117, 25);
 		frame.getContentPane().add(btnValider);
 		
 		JButton btnRetour = new JButton("Retour");

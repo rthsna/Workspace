@@ -13,6 +13,7 @@ import model.LIVRE;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -58,6 +59,12 @@ public class View_creationlivre {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JLabel lblCreationlivre = new JLabel("");
+		lblCreationlivre.setForeground(Color.CYAN);
+		lblCreationlivre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		lblCreationlivre.setBounds(124, 211, 196, 14);
+		frame.getContentPane().add(lblCreationlivre);
 		lblCrationLivre.setForeground(new Color(255, 222, 173));
 		lblCrationLivre.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 18));
 		lblCrationLivre.setBounds(98, 11, 196, 33);
@@ -94,7 +101,7 @@ public class View_creationlivre {
 		textField_Prix.setBounds(98, 123, 114, 19);
 		frame.getContentPane().add(textField_Prix);
 		textField_Prix.setColumns(10);
-		
+
 		
 		JLabel lblAuteur = new JLabel("Auteur :");
 		lblAuteur.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -109,8 +116,15 @@ public class View_creationlivre {
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					
-				mainMVC.getM().Creation_livre(textField_Isbn.getText(),textField_Titre.getText(), Float.parseFloat(textField_Prix.getText()),Integer.parseInt(textField_Auteur.getText()));
+				try {
+					mainMVC.getM().creation_livre(textField_Isbn.getText(),textField_Titre.getText(), Float.parseFloat(textField_Prix.getText()),Integer.parseInt(textField_Auteur.getText()));		
+					lblCreationlivre.setText("Le livre a bien été empruntée");			
+				} catch (NumberFormatException | SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					lblCreationlivre.setText("INFORMATION INCORRECTE");
+				}
+				
 			}
 		});
 		btnValider.setBackground(new Color(176, 224, 230));

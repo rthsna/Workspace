@@ -97,7 +97,7 @@ public class LIVRE {
 			str=str+" - "+"Non dispo";
 		}		
 		return str;
-	}
+	    }
 
 
 }

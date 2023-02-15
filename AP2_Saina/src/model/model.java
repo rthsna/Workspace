@@ -230,10 +230,18 @@ public class model {
 		requete = "INSERT INTO `livre` (`ISBN`, `titre`, `prix`, `adherent`, `auteur`) VALUES ('"+ISBN+"', '"+titre+"', "+prix+", null, "+Auteur+");";
 		System.out.println(requete);
 		stmt.executeUpdate(requete);
-
 	}
 
-	
+	public void creation_adherent( String num ,String nom , String prenom, String email   ) throws SQLException
+	{		
+
+		String requete;
+		Statement stmt = con.createStatement();
+
+		requete = "INSERT INTO `adherent` (`num`, `nom`, `prenom`, `email`) VALUES ('"+num+"', '"+nom+"', '"+prenom+"', '"+email+"');";
+		System.out.println(requete);
+		stmt.executeUpdate(requete);
+	}
 
 }
 
