@@ -22,6 +22,7 @@ include '_conf.php';
         while($donnees= mysqli_fetch_assoc($resultat))
          {
          $contenu=$donnees['description'] ;
+         $date=$donnees['date'];
          }  
       }
  
@@ -33,13 +34,13 @@ include '_conf.php';
 
 <div> <font size=20 align="center">Modifier le compte rendu </font> </div> 
 <br> 
-<div> Date:   </div> $date=$donnees['date']
-<div> Contenu: <br><textarea name="contenu" rows=10 cols=40></textarea>
+<div> Date:   </div> <?php echo   $date; 
+?>
+<div> Contenu: <br><textarea name="contenu" rows=10 cols=40><?php    
+echo  $contenu;
+?> </textarea>
 </textarea>
 <br><br>
-<?php    
-echo  $contenu;
-?>
 <br><br>
 Note : <select name="note">
     <option value="1">1</option>
@@ -52,7 +53,7 @@ Note : <select name="note">
 <br><br>
 <br>
 <div> <button type="submit" name="update"> Modifier </button>
-
+<?php $requete="SELECT * FROM CR WHERE CR.num = $idCR ";"UPDATE `cr` SET `description`=$donnees['description'] ";?>
 
 </html>
 
